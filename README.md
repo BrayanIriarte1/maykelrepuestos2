@@ -14,3 +14,24 @@ Acceso al panel admin protegido con usuario y contraseña (varios administradore
 Panel de administración con navegación lateral: Inicio, Analítica (gráficos), Catálogo, Reservas, Stock, Usuarios y Configuración.
 Módulo de Usuarios y roles : crear roles con permisos específicos y cuentas de acceso al panel para el equipo.
 Todo el texto del sitio público es editable desde el panel (pestaña Configuración): nombre del negocio, portada (título, subtítulo, botones y estadísticas), encabezados de cada sección, historia de la empresa, servicios, datos de contacto y aviso legal — todo se edita ahí y se guarda en el backend; el sitio público lo muestra al instante, sin tocar código ni volver a compilar.
+
+# Estructura
+maykel_flutter/
+  backend/    — servidor Dart (shelf) con la API y la "base de datos" en JSON
+  app/        — app Flutter Web (catálogo público + panel admin)
+
+Cada carpeta tiene su propio README.mdcon instrucciones detalladas de instalación y ejecución:
+
+backend/README.md
+app/README.md
+
+#Inicio Rápido
+# 1. Compila la app Flutter
+cd app
+flutter pub get
+flutter build web
+
+# 2. Corre el backend (sirve la API y la app compilada, todo en un puerto)
+cd ../backend
+dart pub get
+dart run bin/server.dart
